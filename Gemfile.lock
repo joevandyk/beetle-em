@@ -1,0 +1,41 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    activesupport (3.0.9)
+    addressable (2.2.6)
+    amqp (0.6.7)
+      eventmachine (>= 0.12.4)
+    beetle (0.2.13)
+      activesupport (>= 2.3.4)
+      amqp (~> 0.6.7)
+      bunny (= 0.6.0)
+      bunny-ext (>= 0.6.5)
+      daemons (>= 1.0.10)
+      redis (= 2.0.4)
+      uuid4r (>= 0.1.2)
+    bunny (0.6.0)
+    bunny-ext (0.6.6)
+      bunny (= 0.6.0)
+    daemons (1.1.4)
+    em-http-request (1.0.0.beta.4)
+      addressable (>= 2.2.3)
+      em-socksify
+      eventmachine (>= 1.0.0.beta.3)
+      http_parser.rb (>= 0.5.1)
+    em-socksify (0.1.0)
+      eventmachine
+    eventmachine (1.0.0.beta.3)
+    http_parser.rb (0.5.1)
+    i18n (0.6.0)
+    nokogiri (1.5.0)
+    redis (2.0.4)
+    uuid4r (0.1.2)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  beetle
+  em-http-request (= 1.0.0.beta.4)
+  i18n
+  nokogiri
