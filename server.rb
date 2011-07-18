@@ -1,7 +1,6 @@
 require "bundler/setup"
 require 'beetle'
 require 'nokogiri'
-require 'open-uri'
 require 'json'
 require 'em-http-request'
 
@@ -15,12 +14,10 @@ client.register_handler(:search) do |m|
   http = EM::HttpRequest.new(uri).get
   http.callback do |page|
     doc = Nokogiri::HTML(page.response)
-    result = doc.css('h3.r a.l').map do |link|
-      link.content
-    end
-    # I want to return result.to_json
+    result = doc.css('h3.r a.l').map { |link| link.content }.to_json
+    # I want to return result
     # Maybe something like
-    # m.finished!(result.to_json)
+    # m.finished!(result)
   end
 end
 
